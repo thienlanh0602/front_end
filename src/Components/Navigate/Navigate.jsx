@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
+import InputAdornment from '@mui/material/InputAdornment';
 
 import MenuItem from '@mui/material/MenuItem';
 
@@ -60,7 +61,7 @@ export default function Navigations() {
         textTransform: 'none',
         width: '120px',
         margin: '7px 0px 0px 10px',
-        borderRadius: '10px',
+        borderRadius: '15px',
         border: '1px solid',
         borderColor: '#808080',
         '&:hover': {
@@ -71,14 +72,13 @@ export default function Navigations() {
         // letterSpacing: 1 
     })
 
-
     return (
         <Toolbar className='toolbar'>
             <Stack
                 textAlign='center'
                 component="form"
                 sx={{
-                    '& .MuiTextField-root': { m: 1, width: '25ch' },
+                    '& .MuiTextField-root': { m: 1, width: '220px', maxHeight: '100%' },
                 }}
                 noValidate
                 autoComplete="off"
@@ -87,13 +87,43 @@ export default function Navigations() {
                     <TextField
                         id="filled-select-currency"
                         select
-                        label="Khoa"
                         value={currency1}
                         onChange={handleChange1}
                         variant="outlined"
+                        InputProps={{
+                            startAdornment: <InputAdornment position="start"
+                                sx={{
+                                    '& .MuiTypography-root': {
+                                        fontWeight: 'bold', color: 'black', fontSize: '14px'
+                                    }
+                                }}
+                            >Khoa</InputAdornment>,
+                            style: {
+                                height: '50px'
+                            }
+                        }}
+                        sx={{
+                            '& .MuiSelect-select': {
+                                color: 'black', fontSize: '13px'
+                            },
+                            '& .MuiSvgIcon-root': {
+                                fontSize: '20px'
+                            },
+                            // '& .MuiStack-root': {
+                            //     alignContent: 'start'
+                            // }
+                            '& .MuiOutlinedInput-root': {
+                                '& fieldset': {
+                                  borderRadius: '15px'
+                                },
+                              },
+                        }}
                     >
                         {currencies1.map((option) => (
-                            <MenuItem key={option.value} value={option.value}>
+                            <MenuItem key={option.value}
+                                value={option.value}
+                                sx={{ fontSize: '13px' }}
+                            >
                                 {option.label}
                             </MenuItem>
                         ))}
@@ -101,13 +131,44 @@ export default function Navigations() {
                     <TextField
                         id="filled-select-currency"
                         select
-                        label="Vị Trí"
                         value={currency2}
                         onChange={handleChange2}
                         variant="outlined"
+                        InputProps={{
+                            startAdornment: <InputAdornment position="start"
+                                sx={{
+                                    '& .MuiTypography-root': {
+                                        fontWeight: 'bold', color: 'black', fontSize: '14px'
+                                    }
+                                }}
+                            >Vị trí</InputAdornment>,
+                            style: {
+                                height: '50px'
+                            }
+                        
+                        }}
+                        sx={{
+                            '& .MuiSelect-select': {
+                                color: 'black', fontSize: '13px'
+                            },
+                            '& .MuiSvgIcon-root': {
+                                fontSize: '20px'
+                            },
+                            // '& .MuiStack-root': {
+                            //     alignContent: 'start'
+                            // }
+                            '& .MuiOutlinedInput-root': {
+                                '& fieldset': {
+                                  borderRadius: '15px'
+                                },
+                              },
+                        }}
                     >
                         {currencies2.map((option) => (
-                            <MenuItem key={option.value} value={option.value}>
+                            <MenuItem key={option.value}
+                                value={option.value}
+                                sx={{ fontSize: '13px' }}
+                            >
                                 {option.label}
                             </MenuItem>
                         ))}
@@ -116,7 +177,6 @@ export default function Navigations() {
                 </Box>
                 <Box pb={3}>
                     <Typography variant='h6' fontSize={13} gutterBottom align='center'>
-
                     </Typography>
                 </Box>
             </Stack>
