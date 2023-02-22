@@ -26,7 +26,6 @@ export default function NavigatitonsPost() {
             <Box>
               <TabList onChange={handleChange}
                 TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
-                textColor='black'
                 sx={{
                   '& .MuiTabs-indicator': {
                     display: 'flex',
@@ -39,6 +38,9 @@ export default function NavigatitonsPost() {
                     backgroundColor: '#F8D6A4',
                     borderRadius: 4
                   },
+                  "& .MuiTab-root.Mui-selected": {
+                    color: 'black'
+                  }
                 }}
               >
                 <Tab label="Bảng tin"

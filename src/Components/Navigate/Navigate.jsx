@@ -41,12 +41,12 @@ const currencies2 = [
 
 
 export default function Navigations() {
-    const [currency1, setCurrency1] = React.useState('CNTT');
+    const [currency1, setCurrency1] = React.useState(' ');
 
     const handleChange1 = (event) => {
         setCurrency1(event.target.value);
     };
-    const [currency2, setCurrency2] = React.useState('PGSK');
+    const [currency2, setCurrency2] = React.useState(' ');
 
     const handleChange2 = (event) => {
         setCurrency2(event.target.value);
@@ -56,7 +56,7 @@ export default function Navigations() {
         backgroundColor: '#B7F5D7',
         color: 'black',
         height: '50px',
-        fontSize: '15px',
+        fontSize: '14px',
         fontWeight: 'bold',
         textTransform: 'none',
         width: '120px',
@@ -89,7 +89,7 @@ export default function Navigations() {
                         select
                         value={currency1}
                         onChange={handleChange1}
-                        variant="outlined"
+                        variant="outlined" 
                         InputProps={{
                             startAdornment: <InputAdornment position="start"
                                 sx={{
@@ -100,7 +100,8 @@ export default function Navigations() {
                             >Khoa</InputAdornment>,
                             style: {
                                 height: '50px'
-                            }
+                            },
+                            
                         }}
                         sx={{
                             '& .MuiSelect-select': {
@@ -114,15 +115,24 @@ export default function Navigations() {
                             // }
                             '& .MuiOutlinedInput-root': {
                                 '& fieldset': {
-                                  borderRadius: '15px'
+                                    borderRadius: '15px'
                                 },
+                                '&.Mui-focused fieldset': {
+                                  borderColor: 'black',
+                                }
+                            },
+                            '& label.Mui-focused': {
+                                color: 'black'
                               },
                         }}
                     >
                         {currencies1.map((option) => (
                             <MenuItem key={option.value}
                                 value={option.value}
-                                sx={{ fontSize: '13px' }}
+                                sx={{
+                                    fontSize: '13px',
+
+                                }}
                             >
                                 {option.label}
                             </MenuItem>
@@ -145,7 +155,7 @@ export default function Navigations() {
                             style: {
                                 height: '50px'
                             }
-                        
+
                         }}
                         sx={{
                             '& .MuiSelect-select': {
@@ -159,15 +169,23 @@ export default function Navigations() {
                             // }
                             '& .MuiOutlinedInput-root': {
                                 '& fieldset': {
-                                  borderRadius: '15px'
+                                    borderRadius: '15px'
                                 },
+                                '&.Mui-focused fieldset': {
+                                  borderColor: 'black',
+                                }
+                            },
+                            '& label.Mui-focused': {
+                                color: 'black'
                               },
                         }}
                     >
                         {currencies2.map((option) => (
                             <MenuItem key={option.value}
                                 value={option.value}
-                                sx={{ fontSize: '13px' }}
+                                sx={{ fontSize: '13px',
+                                
+                            }}
                             >
                                 {option.label}
                             </MenuItem>
