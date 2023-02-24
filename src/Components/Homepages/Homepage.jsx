@@ -8,7 +8,7 @@ import './Homepage.css';
 
 export default function Homepage() {
   return (
-    <div className='pageHome'>
+    <div>
       <Header/>
       <Navigation/>
       <NavigationPost/>
