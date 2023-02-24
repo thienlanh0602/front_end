@@ -284,6 +284,8 @@ export default function NavigatitonsPost() {
                 <Box  sx={{maxWidth: '100%', height: '1px', width: '100%', backgroundColor: '#E8E8E8'}}>
 
                 </Box>
+
+                <Box> </Box>
                 
                 <CardActions>
 
