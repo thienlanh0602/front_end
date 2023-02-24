@@ -5,7 +5,8 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { Avatar, Card, CardActions, CardContent, CardHeader, CardMedia, Collapse, IconButton, Rating, Toolbar, Typography } from '@mui/material';
-import { Favorite, MoreVert } from '@mui/icons-material';
+import { ArrowRight, Favorite, MoreVert } from '@mui/icons-material';
+import imgPost from './Rectangle50.svg'
 
 
 const myColor = {
@@ -66,7 +67,14 @@ const myCard = {
   justifyContent: 'center',
   width: '500px',
   height: '500px',
-  borderRadius: '14px'
+  borderRadius: '12px',
+  margin: 'auto'
+}
+
+const myMedia = {
+  height: 0, 
+  paddingTop: '56.25%', // 16:9,
+  marginTop: '30'
 }
 
 export default function NavigatitonsPost() {
@@ -98,64 +106,78 @@ export default function NavigatitonsPost() {
 
       {/* thanh cua content - dang bai viet */}
       <Toolbar>
-      <Box sx={myToolbarContent}>
-        <TabContext value={value} >
-        <TabPanel value="1" sx={{}}>
-          {/* de rieng ra 1 component */}
-          <Card sx={myCard}>
-            <CardHeader
-              avatar={
-                <Avatar>R</Avatar>
-              }
-              action={
-                <IconButton aria-label='settings'>
-                  <MoreVert />
-                </IconButton>
-              }
-              title='Đây là tên bài viết'
-              subheader='Đây là ngày đăng bài'
-            >
-            </CardHeader>
-
-
-            <CardMedia
-              image=''
-            >
-              đây là hình ảnh
-            </CardMedia>
-
-
-            <CardContent>
-              <Typography>
-                Đây là nội dung bài viết
-              </Typography>
-            </CardContent>
+        <Box sx={myToolbarContent}>
+          <TabContext value={value} >
+            <TabPanel value="1" sx={{}}>
+              {/* de rieng ra 1 component */}
+              <Card sx={myCard}>
+                <CardHeader
+                  // avatar={
+                  //   <Avatar>R</Avatar>
+                  // }
+                  action={
+                    <IconButton aria-label='settings'>
+                      <MoreVert />
+                    </IconButton>
+                  }
+                  title='Đây là tên bài viết'
+                  titleTypographyProps={{ align: 'left', fontSize: '16px', fontWeight: 'bold', paddingBottom: '2px' }}
+                  subheader='Đây là ngày đăng bài'
+                  subheaderTypographyProps={{ align: 'left', fontSize: '12px' }}
+                  sx={{
+                    //   '& .MuiTypography-root': {
+                    //     color: 'black', fontSize: '14px', fontWeight: 'bold'
+                    // },
+                  }}
+                >
+                </CardHeader>
 
 
 
 
-            <CardActions>
-              <IconButton >
-                <Favorite />
-              </IconButton>
-
-              <IconButton >
-                <Rating />
-              </IconButton>
-            </CardActions>
+                <CardMedia 
+                sx={myMedia}
+                image={imgPost}
+                >
+                  
+                </CardMedia>
 
 
+                <CardContent>
+                  <Typography sx={{textAlign: 'left', fontSize: '14px'}}>
+                    Đây là nội dung bài viết
+                  </Typography>
+                </CardContent >
 
-            <Collapse>
-            </Collapse>
-          </Card>
-        </TabPanel>
-      </TabContext>
 
-    </Box>
-      
+
+
+                <CardActions>
+                  <IconButton >
+                    <Favorite />
+                  </IconButton>
+
+                  <IconButton >
+                    <Rating />
+                  </IconButton>
+                  
+                  
+                  <IconButton >
+                    <ArrowRight />
+                  </IconButton>
+
+                </CardActions>
+
+                <Collapse>
+                </Collapse>
+              </Card>
+            </TabPanel>
+          </TabContext>
+
+        </Box>
+
       </Toolbar>
-   
+
 
     </div>
   );
