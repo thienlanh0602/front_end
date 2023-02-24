@@ -46,11 +46,11 @@ const myButton_timKiem = {
     borderRadius: '10px',
     border: '1px solid',
     borderColor: '#808080',
-    '&:hover': {
-        backgroundColor: '#CBB7F5',
-        borderColor: 'none',
-        boxShadow: 'none',
-    }
+    // '&:hover': {
+    //     backgroundColor: '#CBB7F5',
+    //     borderColor: 'none',
+    //     boxShadow: 'none',
+    // }
 }
 
 const myTextField = {
