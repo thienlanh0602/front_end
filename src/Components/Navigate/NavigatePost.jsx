@@ -61,6 +61,7 @@ const myToolbarContent = {
   flexGrow: 1,
   justifyContent: 'center',
   backgroundColor: 'none',
+  flexDirection: 'column'
 }
 
 const myCard = {
@@ -72,7 +73,7 @@ const myCard = {
 }
 
 const myMedia = {
-  height: 0, 
+  height: 0,
   paddingTop: '56.25%', // 16:9,
   marginTop: '30'
 }
@@ -105,10 +106,10 @@ export default function NavigatitonsPost() {
       </Toolbar>
 
       {/* thanh cua content - dang bai viet */}
-      <Toolbar>
+      <Toolbar sx={{dislay: 'flex', flexDirection: 'row'}}>
         <Box sx={myToolbarContent}>
           <TabContext value={value} >
-            <TabPanel value="1" sx={{}}>
+            <TabPanel value="1" >
               {/* de rieng ra 1 component */}
               <Card sx={myCard}>
                 <CardHeader
@@ -135,16 +136,16 @@ export default function NavigatitonsPost() {
 
 
 
-                <CardMedia 
-                sx={myMedia}
-                image={imgPost}
+                <CardMedia
+                  sx={myMedia}
+                  image={imgPost}
                 >
-                  
+
                 </CardMedia>
 
 
                 <CardContent>
-                  <Typography sx={{textAlign: 'left', fontSize: '14px'}}>
+                  <Typography sx={{ textAlign: 'left', fontSize: '14px' }}>
                     Đây là nội dung bài viết
                   </Typography>
                 </CardContent >
@@ -152,31 +153,138 @@ export default function NavigatitonsPost() {
 
 
 
-                <CardActions>
+                <CardActions disableSpacing >
+
+
+
                   <IconButton >
                     <Favorite />
                   </IconButton>
 
-                  <IconButton >
+                  <IconButton>
                     <Rating />
                   </IconButton>
-                  
-                  
-                  <IconButton >
+
+
+                  <IconButton sx={{ ml: 'auto' }}>
                     <ArrowRight />
                   </IconButton>
 
                 </CardActions>
 
+
+
                 <Collapse>
                 </Collapse>
+
+
               </Card>
             </TabPanel>
           </TabContext>
 
+
+
+          <TabContext value={value} >
+            <TabPanel value="1" >
+              {/* de rieng ra 1 component */}
+              <Card sx={myCard}>
+                <CardHeader
+                  // avatar={
+                  //   <Avatar>R</Avatar>
+                  // }
+                  action={
+                    <IconButton aria-label='settings'>
+                      <MoreVert />
+                    </IconButton>
+                  }
+                  title='Đây là tên bài viết'
+                  titleTypographyProps={{ align: 'left', fontSize: '16px', fontWeight: 'bold', paddingBottom: '2px' }}
+                  subheader='Đây là ngày đăng bài'
+                  subheaderTypographyProps={{ align: 'left', fontSize: '12px' }}
+                  sx={{
+                    //   '& .MuiTypography-root': {
+                    //     color: 'black', fontSize: '14px', fontWeight: 'bold'
+                    // },
+                  }}
+                >
+                </CardHeader>
+
+
+
+
+                <CardMedia
+                  sx={myMedia}
+                  image={imgPost}
+                >
+
+                </CardMedia>
+
+
+                <CardContent>
+                  <Typography sx={{ textAlign: 'left', fontSize: '14px' }}>
+                    Đây là nội dung bài viết
+                  </Typography>
+                </CardContent >
+
+
+
+
+                <CardActions disableSpacing >
+
+
+
+                  <IconButton >
+                    <Favorite />
+                  </IconButton>
+
+                  <IconButton>
+                    <Rating />
+                  </IconButton>
+
+
+                  <IconButton sx={{ ml: 'auto' }}>
+                    <ArrowRight />
+                  </IconButton>
+
+                </CardActions>
+
+
+
+                <Collapse>
+                </Collapse>
+
+
+              </Card>
+            </TabPanel>
+          </TabContext>
+
+
+
+
+
+
         </Box>
 
+
+
+        {/* trang nay la trang can giu lai */}
+        <Box>
+        <TabContext value={value} >
+            <TabPanel value="1" >
+              {/* de rieng ra 1 component */}
+              <Card sx={myCard}>
+
+              </Card>
+            </TabPanel>
+          </TabContext>
+        </Box>
+
+
       </Toolbar>
+
+
+
+
 
 
     </div>
